@@ -1,12 +1,14 @@
-package com.example.demo.entity;
+package com.example.demo.entity.employee;
 
 import java.util.Objects;
 
         import javax.persistence.Entity;
         import javax.persistence.GeneratedValue;
         import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "employee")
 public class Employee {
 
     private @Id @GeneratedValue Long id;
