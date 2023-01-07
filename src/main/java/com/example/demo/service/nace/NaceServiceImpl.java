@@ -24,5 +24,10 @@ public class NaceServiceImpl implements NaceService{
         return naceRepository.findById(order);
     }
 
+    @Override
+    public Nace saveNaceDetails(Nace nace) {
+        return naceRepository.save(nace);
+    }
+
 
 }

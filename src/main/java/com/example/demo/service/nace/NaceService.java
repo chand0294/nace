@@ -10,4 +10,6 @@ public interface NaceService {
     List<Nace> findAll();
 
     Optional<Nace> findByOrder(Long order);
+
+    Nace saveNaceDetails(Nace nace);
 }

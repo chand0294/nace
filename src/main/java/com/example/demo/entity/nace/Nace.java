@@ -1,41 +1,48 @@
 package com.example.demo.entity.nace;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="nace")
 public class Nace {
 
     @Id
+    @GeneratedValue
+    @Column(name="order_no")
     private Long order;
 
+    @Column(name="level")
     private Integer level;
 
+    @Column(name="code")
     private String code;
 
+    @Column(name="parent")
     private String parent;
 
+    @Column(name="description")
     private String description;
 
+    @Column(name="includes")
     private String includes;
+
 
     @Column(name="also_includes")
     private String alsoIncludes;
 
+    @Column(name="rulings")
     private String rulings;
 
+    @Column(name="excludes")
     private String excludes;
 
+    @Column(name="reference")
     private String reference;
 
 
     public  Nace(){};
 
-    public Nace(Long order, Integer level, String code, String parent, String description, String includes, String alsoIncludes, String rulings, String excludes, String reference) {
-        this.order = order;
+    public Nace(Integer level, String code, String parent, String description, String includes, String alsoIncludes, String rulings, String excludes, String reference) {
         this.level = level;
         this.code = code;
         this.parent = parent;

@@ -5,10 +5,7 @@ import com.example.demo.service.nace.NaceServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +34,11 @@ public class NaceController {
         return ResponseEntity.ok(Optional.empty());
     }
 
-
+    @PostMapping
+    public ResponseEntity<Nace> saveNaceDetails( @RequestBody Nace nace) {
+        Nace naceRecord = naceService.saveNaceDetails(nace);
+        return ResponseEntity.ok(naceRecord);
+    }
 
 
 }
